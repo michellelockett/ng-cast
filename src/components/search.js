@@ -1,10 +1,9 @@
 angular.module('video-player')
 
-.component('search', {
-  bindings: {
-    result: '<',
-    service: '<'
-  },
-
-  templateUrl: "src/templates/search.html"
-});
+  .component('search', {
+    bindings: {
+      result: '<',
+      service: '<'
+    },
+    templateUrl: "src/templates/search.html"
+  });
