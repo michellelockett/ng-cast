@@ -13,12 +13,13 @@ angular.module('video-player')
           videoEmbeddable: 'true'
         },
       })
-      .then(
-        function(response){
-          cb(response.data.items);
-        }
-      )
-    }
-});
+        .then(
+          function(response){
+            cb(response.data.items);
+          }
+        );
+    };
+
+  });
 
 
