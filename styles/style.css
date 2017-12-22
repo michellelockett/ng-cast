@@ -84,6 +84,16 @@ body {
   padding-left: 20px;
 }
 
+.loadResults {
+  color: #ff0000;
+  display: flex;
+  align-self: center;
+}
+
+.LoadBtn {
+  text-align: center;
+}
+
 h5 {
   border: 2px solid red;
   text-align: center;

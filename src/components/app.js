@@ -15,13 +15,24 @@ angular.module('video-player')
       };
 
       this.result = data => {
-        this.videos = data;
-        this.currentVideo = data[0];
+        this.videos = data.data.items;
+        this.currentVideo = data.data.items[0];
+        this.nextPageToken = data.data.nextPageToken;
+        this.query = data.config.params.q;
       };
+
+      this.addVideos = data => {
+        this.videos = this.videos.concat(data.items);
+        this.nextPageToken = data.nextPageToken;
+      }
 
       this.searchResults = query => {
         youTube.search(query, this.result);
       };
+
+      this.loadMoreResults = () => {
+        youTube.getMoreResults(this.nextPageToken, this.addVideos, this.query);
+      }
 
       this.getIframeSrc = currentVideo => {
         var base = 'https://www.youtube.com/embed/';
